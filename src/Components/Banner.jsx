@@ -41,7 +41,16 @@ const Banner = () => {
     <section className="w-full ">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        navigation={{
+          enabled: false,
+        }}
+        breakpoints={{
+          768: {
+            navigation: {
+              enabled: true,
+            },
+          },
+        }}
         pagination={{ clickable: true }}
         autoplay={{
           delay: 3500,
@@ -53,7 +62,7 @@ const Banner = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="relative h-[90vh] bg-cover bg-center"
+              className="relative  h-[70vh] sm:h-[80vh] md:h-[90vh]bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
               }}

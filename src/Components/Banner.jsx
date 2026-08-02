@@ -11,14 +11,6 @@ import Link from "next/link";
 
 const slides = [
   {
-    id: 1,
-    title: "Book Premium Sports Facilities Anytime",
-    description:
-      "Discover football turfs, badminton courts, tennis courts, and more. Reserve your favorite venue in just a few clicks.",
-    image:
-      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
     id: 2,
     title: "Play Together. Stay Active. Win Together.",
     description:
@@ -33,6 +25,14 @@ const slides = [
       "Manage your bookings, explore new facilities, and experience a smarter way to play your favorite sports.",
     image:
       "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    id: 1,
+    title: "Book Premium Sports Facilities Anytime",
+    description:
+      "Discover football turfs, badminton courts, tennis courts, and more. Reserve your favorite venue in just a few clicks.",
+    image:
+      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=80",
   },
 ];
 
@@ -62,7 +62,7 @@ const Banner = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="relative  h-[70vh] sm:h-[80vh] md:h-[90vh]bg-cover bg-center"
+              className="relative  h-[70vh] sm:h-[80vh] md:h-[90vh] bg-cover  object-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
               }}
@@ -114,4 +114,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Banner;    

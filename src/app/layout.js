@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import NestThemeProvider from "@/providers/NestThemeProvider";
 import Footer from "@/Components/Footer";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer></Footer>
         </NestThemeProvider>
+        <Toaster/>
       </body>
     </html>
   );

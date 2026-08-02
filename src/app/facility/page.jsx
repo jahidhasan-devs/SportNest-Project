@@ -1,5 +1,7 @@
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { LuExternalLink } from "react-icons/lu";
 
 
 export const metadata={
@@ -77,11 +79,11 @@ const FacilitiesPage = async () => {
 
               {/* Button Always Bottom */}
               <div className="mt-auto pt-6">
-                <Link
-                  href={`/facility/${facility._id}`}
-                  className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-xl font-semibold transition-all duration-300"
-                >
-                  Book Now
+                <Link href={`/facility/${facility._id}`}>
+                  <Button variant="ghost" className="mt-1 text-cyan-500">
+                    Book Now
+                    <LuExternalLink />
+                  </Button>
                 </Link>
               </div>
             </div>

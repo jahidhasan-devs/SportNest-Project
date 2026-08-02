@@ -15,7 +15,7 @@ const Navbar = () => {
         data: session,     
       } = authClient.useSession(); 
       const user=session?.user;
-      console.log(user);
+      // console.log(user);
       
   // State
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,7 +67,7 @@ const Navbar = () => {
 
             {user && (
               <>
-                <Link className="hover:text-blue-600" href="/my-bookings">
+                <Link className="hover:text-blue-600" href="/booking">
                   My Bookings
                 </Link>
 
@@ -126,7 +126,9 @@ const Navbar = () => {
                       onAction={(key) => console.log(`Selected: ${key}`)}
                     >
                       <Dropdown.Item id="new-file" textValue="New file">
-                        <Label>My Bookings</Label>
+                        <Link href="/booking">
+                          <Label>My Bookings</Label>
+                        </Link>
                       </Dropdown.Item>
                       <Dropdown.Item id="copy-link" textValue="Copy link">
                         <Link href="/add-facility">

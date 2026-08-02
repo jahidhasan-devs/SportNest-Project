@@ -1,6 +1,8 @@
+
 import Image from "next/image";
 import { FiMapPin, FiClock, FiUsers, FiMail } from "react-icons/fi";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import BookingCard from "@/Components/BookingCard";
 // import BookingCard from "@/components/BookingCard";
 
 const FacilityDetailsPage = async ({ params }) => {
@@ -135,51 +137,7 @@ const FacilityDetailsPage = async ({ params }) => {
           {/* Right Side */}
 
           {/* <BookingCard facility={facility} /> */}
-          <div>
-            <div className="sticky top-24">
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
-                <h2 className="text-2xl font-bold mb-6">Book This Facility</h2>
-
-                <div className="space-y-5">
-                  <div className="flex justify-between border-b pb-3">
-                    <span className="text-gray-500">Facility</span>
-                    <span className="font-semibold">{facilityName}</span>
-                  </div>
-
-                  <div className="flex justify-between border-b pb-3">
-                    <span className="text-gray-500">Price / Hour</span>
-
-                    <span className="font-semibold text-green-600">
-                      ৳ {pricePerHour}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between border-b pb-3">
-                    <span className="text-gray-500">Capacity</span>
-
-                    <span className="font-semibold">{capacity}</span>
-                  </div>
-
-                  <div className="flex justify-between border-b pb-3">
-                    <span className="text-gray-500">Time Slot</span>
-
-                    <span className="font-semibold text-right">
-                      {availableTimeSlots}
-                    </span>
-                  </div>
-
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded-xl font-semibold mt-5">
-                    Book Now
-                  </button>
-
-                  <p className="text-xs text-center text-gray-500">
-                    Secure booking with instant confirmation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+          <BookingCard facility={facility} />
         </div>
       </div>
     </div>

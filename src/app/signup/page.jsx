@@ -43,7 +43,7 @@ const onSubmit =async(e)=>{
 
 //for google login
 const handleGoogle = async () => {
-await authClient.signUp.social({
+await authClient.signIn.social({
     provider: "google",
   });
 };

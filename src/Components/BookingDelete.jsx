@@ -2,8 +2,8 @@
 
 import { AlertDialog, Button } from "@heroui/react";
 
-export function BookingDeletePage({ bookingId }) {
- 
+export function BookingDeletePage({ booking }) {
+   const bookingId=booking._id
   const handleCancleBooking=async()=>{
     const res = await fetch(`http://localhost:5000/booking/${bookingId}`,{
         method:"DELETE",
@@ -26,13 +26,14 @@ export function BookingDeletePage({ bookingId }) {
             <AlertDialog.Header>
               <AlertDialog.Icon status="danger" />
               <AlertDialog.Heading>
-                Delete Booking permanently?
+                Cancel {booking.facilityType} permanently?
               </AlertDialog.Heading>
             </AlertDialog.Header>
             <AlertDialog.Body>
               <p>
-                This will permanently delete <strong>Your booking</strong>{" "}
-                and all of its data. This action cannot be undone.
+                This will permanently cancel{" "}
+                <strong>{booking.facilityType}</strong> and all of its data.
+                This action cannot be undone.
               </p>
             </AlertDialog.Body>
             <AlertDialog.Footer>
@@ -44,7 +45,7 @@ export function BookingDeletePage({ bookingId }) {
                 slot="close"
                 variant="danger"
               >
-                Delete Booking
+                Cancel Booking
               </Button>
             </AlertDialog.Footer>
           </AlertDialog.Dialog>

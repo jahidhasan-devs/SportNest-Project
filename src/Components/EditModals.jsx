@@ -1,3 +1,7 @@
+
+"use client"
+
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   FieldError,
@@ -7,9 +11,36 @@ import {
   TextArea,
   TextField,
 } from "@heroui/react";
+import toast from "react-hot-toast";
 import { FiEdit2 } from "react-icons/fi";
 
 const EditModals = ({ facility }) => {
+
+   const Id=facility._id
+  
+   
+
+  const onsubmit=async(e)=>{
+    e.preventDefault()
+    const formData=new FormData(e.currentTarget)
+    const facility=Object.fromEntries(formData.entries())
+    
+   
+    const res = await fetch(`http://localhost:5000/facility/${Id}`,{
+      method:"PATCH",
+      headers: {
+      "content-type":"application/json"
+      },
+      body:JSON.stringify(facility)
+    }
+     
+    );
+    toast.success("Data is updeded !");
+    
+    window.location.reload();
+    
+   }
+
   return (
     <Modal>
       <Button
@@ -34,7 +65,7 @@ const EditModals = ({ facility }) => {
             </Modal.Header>
 
             <Modal.Body>
-              <form className="space-y-6">
+              <form onSubmit={onsubmit} className="space-y-6">
                 {/* Facility Name (Full Width) */}
                 <TextField
                   defaultValue={facility?.facilityName}

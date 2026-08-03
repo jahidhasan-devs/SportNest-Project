@@ -75,9 +75,9 @@ const ManageFacility = async () => {
                 <div className="flex-1 p-6 relative">
                   {/* Action Buttons */}
                   <div className="absolute top-5 right-5 flex gap-2">
-                    <EditModals facilityId={facility._id}></EditModals>
+                    <EditModals facility={facility}></EditModals>
                     <DeleteMyAddFacility
-                      facilityId={facility._id}
+                      facility={facility}
                     ></DeleteMyAddFacility>
                   </div>
 

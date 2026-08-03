@@ -44,7 +44,7 @@ const BookingPage = async () => {
                     src={booking.image}
                     alt={booking.facilityName}
                     fill
-                    className="object-cover"
+                    className="object-cover p-3"
                   />
                 </div>
 
@@ -108,7 +108,7 @@ const BookingPage = async () => {
                   </div>
 
                   <div className="flex justify-end mt-8">
-                  <BookingDeletePage bookingId={booking._id}></BookingDeletePage>
+                  <BookingDeletePage booking={booking}></BookingDeletePage>
                 
                   </div>
                 </div>

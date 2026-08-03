@@ -12,6 +12,8 @@ import {
   TextArea,
   TextField,
 } from "@heroui/react";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 const AddFacilityPage = () => {
 
@@ -35,7 +37,8 @@ const AddFacilityPage = () => {
    })
     const data=await res.json()
     // console.log(data);
-    alert("Data is added  !");
+    toast.success("data is added !");
+    redirect("/facility")
     
   }
 

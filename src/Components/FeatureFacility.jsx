@@ -3,22 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 
-
-export const metadata={
-  title:"all-facility"
-}
-
-const FacilitiesPage = async () => {
+const FeatureFacilitiesPage = async () => {
   const res = await fetch("http://localhost:5000/facility", {
     cache: "no-store",
   });
 
-  const facilities = await res.json();
+  const facilitiesData = await res.json();
+  const facilities = facilitiesData.slice(0, 6);
 
   return (
-    <section className="max-w-7xl mx-auto px-5 py-10">
+    <section className="max-w-7xl mx-auto pt-20">
       <div className="mb-10">
-        <h1 className="text-4xl font-bold">All Facilities</h1>
+        <h1 className="text-4xl font-bold">Feature Facilities</h1>
         <p className="text-gray-500 mt-2">
           Browse and book your favorite sports facilities.
         </p>
@@ -28,10 +24,10 @@ const FacilitiesPage = async () => {
         {facilities.map((facility) => (
           <div
             key={facility._id}
-            className=" groupbg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+            className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
           >
             {/* Image */}
-            <div className="relative h-56 w-full">
+            <div className="relative h-56 w-full overflow-hidden">
               <Image
                 src={facility.image}
                 alt={facility.facilityName}
@@ -50,7 +46,6 @@ const FacilitiesPage = async () => {
                 </span>
               </div>
 
-              {/* Fixed Description */}
               <p className="text-gray-600 mb-4 line-clamp-2 min-h-12">
                 {facility.description}
               </p>
@@ -77,7 +72,6 @@ const FacilitiesPage = async () => {
                 </p>
               </div>
 
-              {/* Button Always Bottom */}
               <div className="mt-auto pt-6">
                 <Link href={`/facility/${facility._id}`}>
                   <Button variant="ghost" className="mt-1 text-cyan-500">
@@ -94,4 +88,4 @@ const FacilitiesPage = async () => {
   );
 };
 
-export default FacilitiesPage;
+export default FeatureFacilitiesPage;

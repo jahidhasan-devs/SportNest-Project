@@ -1,9 +1,11 @@
-
+"use client"
 
 import { AlertDialog, Button } from "@heroui/react";
 import { FiTrash2} from "react-icons/fi";
 
 export function DeleteMyAddFacility({ facilityId }) {
+
+
   const handleDeleteModal =async () => {
    const res = await fetch( `http://localhost:5000/facility/${facilityId}`,{
 
@@ -48,7 +50,7 @@ export function DeleteMyAddFacility({ facilityId }) {
               <Button slot="close" variant="tertiary">
                 Cancel
               </Button>
-              <Button slot="close" variant="danger">
+              <Button onClick={handleDeleteModal} slot="close" variant="danger">
                 Delete Facility
               </Button>
             </AlertDialog.Footer>

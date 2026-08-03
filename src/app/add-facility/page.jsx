@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Card,
@@ -14,6 +15,11 @@ import {
 
 const AddFacilityPage = () => {
 
+       const {
+          data: session,     
+        } = authClient.useSession(); 
+        const user=session?.user;
+     
    const onSubmit=async(e)=>{
     e.preventDefault()
     const formData=new FormData(e.currentTarget)
@@ -171,7 +177,7 @@ const AddFacilityPage = () => {
                 <TextField name="ownerEmail" isRequired>
                   <Label>Owner Email</Label>
                   <Input
-                    value="[email protected]"
+                    value={user?.email}
                     readOnly
                     className="rounded-xl bg-default-100"
                   />

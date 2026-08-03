@@ -75,10 +75,7 @@ const Navbar = () => {
                   Add Facility
                 </Link>
 
-                <Link
-                  className="hover:text-blue-600"
-                  href="/manage-my-facilities"
-                >
+                <Link className="hover:text-blue-600" href="/manage-facility">
                   Manage My Facilities
                 </Link>
               </>
@@ -137,7 +134,10 @@ const Navbar = () => {
                         </Link>
                       </Dropdown.Item>
                       <Dropdown.Item id="edit-file" textValue="Edit file">
-                        <Label>Manage My Facilities</Label>
+                        <Link href="/manage-facility">
+                          {" "}
+                          <Label>Manage My Facilities</Label>
+                        </Link>
                       </Dropdown.Item>
                       <Dropdown.Item
                         id="delete-file"

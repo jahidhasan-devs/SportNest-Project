@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { FiCalendar, FiClock } from "react-icons/fi";
+import { BookingDeletePage } from "@/Components/BookingDelete";
 
 const BookingPage = async () => {
   const session = await auth.api.getSession({
@@ -16,6 +17,7 @@ const BookingPage = async () => {
   });
 
   const bookings = await res.json();
+//   console.log("Bookings data check",bookings);
 
   return (
     <div className="max-w-7xl mx-auto px-5 py-10">
@@ -37,7 +39,7 @@ const BookingPage = async () => {
             >
               <div className="md:flex">
                 {/* Image */}
-                <div className="relative md:w-72 h-56">
+                <div className="relative md:w-72 h-65">
                   <Image
                     src={booking.image}
                     alt={booking.facilityName}
@@ -51,7 +53,7 @@ const BookingPage = async () => {
                   <div className="flex justify-between items-start flex-wrap gap-4">
                     <div>
                       <h2 className="text-2xl font-bold">
-                        {booking.facilityName}
+                         {booking.facilityName}
                       </h2>
 
                       <p className="text-blue-600 font-medium mt-1">
@@ -106,9 +108,8 @@ const BookingPage = async () => {
                   </div>
 
                   <div className="flex justify-end mt-8">
-                    <button className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-xl font-semibold ">
-                      Cancel Booking
-                    </button>
+                  <BookingDeletePage bookingId={booking._id}></BookingDeletePage>
+                
                   </div>
                 </div>
               </div>

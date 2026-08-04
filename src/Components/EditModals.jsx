@@ -25,15 +25,17 @@ const EditModals = ({ facility }) => {
     const formData=new FormData(e.currentTarget)
     const facility=Object.fromEntries(formData.entries())
     
-   
-    const res = await fetch(`http://localhost:5000/facility/${Id}`,{
-      method:"PATCH",
-      headers: {
-      "content-type":"application/json"
+    const { data: tokenData } = await authClient.token();
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URI}/facility/${Id}`,
+      {
+        method: "PATCH",
+        headers: {
+          authorization: `bearer ${tokenData.token}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(facility),
       },
-      body:JSON.stringify(facility)
-    }
-     
     );
     toast.success("Data is updeded !");
     

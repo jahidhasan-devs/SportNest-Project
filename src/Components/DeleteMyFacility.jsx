@@ -1,5 +1,6 @@
 "use client"
 
+import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import toast from "react-hot-toast";
 import { FiTrash2} from "react-icons/fi";
@@ -8,12 +9,17 @@ export function DeleteMyAddFacility({ facility }) {
    const facilityId=facility._id
 
   const handleDeleteModal =async () => {
-   const res = await fetch(`http://localhost:5000/facility/${facilityId}`, {
-     method: "DELETE",
-     headers: {
-       "content-type": "application/json",
+     const {data:tokenData }= await authClient.token()
+   const res = await fetch(
+     `${process.env.NEXT_PUBLIC_SERVER_URI}/facility/${facilityId}`,
+     {
+       method: "DELETE",
+       headers: {
+         authorization: `bearer ${tokenData.token}`,
+         "content-type": "application/json",
+       },
      },
-   });
+   );
    const deleteData=await res.json();
    console.log("delete Datta=",deleteData)
     window.location.reload();

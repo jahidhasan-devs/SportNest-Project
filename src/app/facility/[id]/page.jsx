@@ -3,14 +3,27 @@ import Image from "next/image";
 import { FiMapPin, FiClock, FiUsers, FiMail } from "react-icons/fi";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import BookingCard from "@/Components/BookingCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 // import BookingCard from "@/components/BookingCard";
 
 const FacilityDetailsPage = async ({ params }) => {
   const { id } = await params;
 
-  const res = await fetch(`http://localhost:5000/facility/${id}`, {
-    cache: "no-store",
-  });
+  const {token}=await auth.api.getToken({
+    headers:await headers()
+  })
+  // console.log("check=",token);
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URI}/facility/${id}`,
+    {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+      cache: "no-store",
+    },
+  );
 
   const facility = await res.json();
 

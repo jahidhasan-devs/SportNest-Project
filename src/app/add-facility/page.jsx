@@ -21,20 +21,22 @@ const AddFacilityPage = () => {
           data: session,     
         } = authClient.useSession(); 
         const user=session?.user;
-     
+  
    const onSubmit=async(e)=>{
     e.preventDefault()
     const formData=new FormData(e.currentTarget)
     const facility= Object.fromEntries(formData.entries())
-    // console.log(facility);
-   const res= await fetch("http://localhost:5000/facility",{
-   method:"POST",
-   headers:{
-    'content-type':'application/json'
-   },
-   body:JSON.stringify(facility)
 
-   })
+     const {data:tokenData }= await authClient.token()
+    // console.log(facility);
+   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}`, {
+     method: "POST",
+     headers: {
+       authorization: `bearer ${tokenData.token}`,
+       "content-type": "application/json",
+     },
+     body: JSON.stringify(facility),
+   });
     const data=await res.json()
     // console.log(data);
     toast.success("data is added !");

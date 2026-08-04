@@ -12,10 +12,19 @@ const ManageFacility = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
   const user = session?.user;
 
-  const res = await fetch(`http://localhost:5000/facility/email/${user.email}`,
+   const {token}=await auth.api.getToken({
+      headers:await headers()
+    })
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URI}/facility/email/${user.email}`,
+    {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    },
     {
       cache: "no-store",
     },

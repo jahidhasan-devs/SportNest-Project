@@ -1,5 +1,7 @@
 import Banner from "@/Components/Banner";
+import WhyChooseUs from "@/Components/Choose";
 import FeatureFacilitiesPage from "@/Components/FeatureFacility";
+import Status from "@/Components/Status";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +9,9 @@ export default function Home() {
     <div>
 
    <Banner></Banner>
-   <FeatureFacilitiesPage></FeatureFacilitiesPage>
+   <FeatureFacilitiesPage/>
+   <WhyChooseUs/>
+   <Status/>
 
     </div>
   );

@@ -7,6 +7,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const BookingCard = ({ facility }) => {
+  
 
 const {
   facilityName,
@@ -48,13 +49,16 @@ const {
       ownerEmail,
       departureDate:new Date(departureDate)
     };
-   const res =await fetch("http://localhost:5000/booking",{
-    method:"POST",
-    headers:{
-    "content-type":"application/json"
-    },
-    body:JSON.stringify(bookingData)
-   })
+      
+     const { data: tokenData } = await authClient.token();
+   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/booking`, {
+     method: "POST",
+     headers: {
+       authorization: `Bearer ${tokenData.token}`,
+       "content-type": "application/json",
+     },
+     body: JSON.stringify(bookingData),
+   });
 
    const data=await res.json()
     toast.success("Booking successful !");

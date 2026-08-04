@@ -25,7 +25,7 @@ const AllFacilityCard = ({ facilities }) => {
           }
 
         const res = await fetch(
-          `http://localhost:5000/facility?search=${encodeURIComponent(search)}&type=${encodeURIComponent(sportType)}`,
+          `${process.env.NEXT_PUBLIC_SERVER_URI}/facility?search=${encodeURIComponent(search)}&type=${encodeURIComponent(sportType)}`,
           {
             cache: "no-store",
           },

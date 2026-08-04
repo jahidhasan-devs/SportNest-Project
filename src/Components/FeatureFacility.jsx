@@ -1,10 +1,20 @@
+import { auth } from "@/lib/auth";
 import { Button } from "@heroui/react";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 
 const FeatureFacilitiesPage = async () => {
-  const res = await fetch("http://localhost:5000/facility", {
+
+  const {token}=await auth.api.getToken({
+    headers:await headers()
+  })
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/facility`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
     cache: "no-store",
   });
 

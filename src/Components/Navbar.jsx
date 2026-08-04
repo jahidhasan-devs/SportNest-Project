@@ -64,7 +64,7 @@ const Navbar = () => {
             <Link
               className="hover:text-blue-600"
               href="/facility"
-              onClick={() => window.location.reload()}
+           
             >
               All Facilities
             </Link>

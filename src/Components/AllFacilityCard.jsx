@@ -3,7 +3,7 @@
 import { Button, Label, SearchField } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
 
 const AllFacilityCard = ({ facilities }) => {
@@ -11,6 +11,10 @@ const AllFacilityCard = ({ facilities }) => {
        const [search, setSearch] = useState("");
       const [sportType, setSportType] = useState("");
       const [facilityData, setFacilityData] = useState(facilities);
+
+       useEffect(() => {
+         setFacilityData(facilities);
+       }, [facilities]);
 
       const handleSearch = async () => {
         
@@ -20,9 +24,12 @@ const AllFacilityCard = ({ facilities }) => {
             
           }
 
-        const res = await fetch(`http://localhost:5000/facility?search=${search}&type=${sportType}`,{
-            cache:"no-store"
-        });
+        const res = await fetch(
+          `http://localhost:5000/facility?search=${encodeURIComponent(search)}&type=${encodeURIComponent(sportType)}`,
+          {
+            cache: "no-store",
+          },
+        );
 
         const data = await res.json();
 

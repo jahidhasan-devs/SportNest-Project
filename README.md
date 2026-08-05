@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏟️ SportNest – Sports Facility Booking Management System
 
-## Getting Started
+SportNest is a modern and responsive sports facility booking platform that allows users to explore sports facilities, book available time slots, and manage their bookings with a secure authentication system. Facility owners can add, update, and manage their own facilities through a user-friendly dashboard.
 
-First, run the development server:
+---
+
+## 🌐 Live Demo
+
+🔗 **Live Site:** [SportNest](https://sportnest-umber.vercel.app)
+
+---
+
+## 📸 Screenshots
+
+### Web View
+
+> *(Add project screenshots here)*
+
+---
+
+## 🚀 Technologies Used
+
+- Next.js
+- React
+- JavaScript (ES6+)
+- Tailwind CSS
+- HeroUI
+- React Icons
+- Better Auth
+- MongoDB
+- Express.js
+- Node.js
+
+---
+
+## ✨ Features
+
+- 🏟️ Browse all available sports facilities
+- 📄 View detailed information for each facility
+- 🔐 Secure authentication using Better Auth
+- 📅 Book facilities with preferred dates
+- 💰 Automatic booking price calculation
+- 📋 Manage personal bookings
+- ❌ Cancel bookings
+- ➕ Add new sports facilities
+- ✏️ Update owned facilities
+- 🗑️ Delete owned facilities
+- 📱 Fully responsive design
+- ⚡ Fast and smooth user experience
+- 🎨 Clean and modern user interface
+
+---
+
+## 📦 Dependencies
+
+Major packages used in this project include:
+
+- Next.js
+- React
+- Tailwind CSS
+- HeroUI
+- React Icons
+- Better Auth
+- MongoDB
+- Express.js
+- Node.js
+
+---
+
+## ⚙️ Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone <Repository-Link>
+```
+
+### 2. Navigate to the project
+
+```bash
+cd <Project-Folder-Name>
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔗 Resources
 
-To learn more about Next.js, take a look at the following resources:
+### 🌐 Live Project [SportNest](https://sportnest-umber.vercel.app)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*(Add Live Project Link Here)*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 💻 Client Repository  [GitHub](https://github.com/jahidhasan-devs/SportNest-Project)
 
-## Deploy on Vercel
+*(Add Client Repository Link Here)*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 💻 Server Repository [GitHub](https://github.com/jahidhasan-devs/sportnest-server)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*(Add Server Repository Link Here)*
+
+---
+
+## 👨‍💻 Author
+
+**Jahid Hasan**
+
+GitHub: *(Add GitHub Profile Link Here)*

@@ -81,14 +81,14 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-cyan-400" />
 
-                <p>+88019xxxxxxxx</p>
+                <p>+8801916948899</p>
               </div>
 
               <div className="flex items-center gap-3">
                 <Envelope className="w-5 h-5 text-cyan-400" />
                 <Link href="https://gamail.com">
                   <p className="flex items-center hover:text-cyan-400">
-                    service@nestsport.com
+                   jahidsharuar2021@gmail.com
                     <MdOutlineArrowOutward />
                   </p>
                 </Link>

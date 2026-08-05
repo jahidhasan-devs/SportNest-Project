@@ -121,4 +121,4 @@ http://localhost:3000
 
 **Jahid Hasan**
 
-GitHub: *(Add GitHub Profile Link Here)*
+🌐 **GitHub Profile:** [jahidhasan-devs](https://github.com/jahidhasan-devs)

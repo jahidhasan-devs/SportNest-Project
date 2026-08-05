@@ -14,7 +14,7 @@ SportNest is a modern and responsive sports facility booking platform that allow
 
 ### 🏠 Home Page
 
-![Home Page](./screenshots/home.png)
+![Home Page](./screenshots/Home.png)
 
 > *(Add project screenshots here)*
 
